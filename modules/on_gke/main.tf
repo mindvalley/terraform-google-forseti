@@ -267,10 +267,10 @@ resource "helm_release" "forseti-security" {
     value = module.server_gcs.forseti-server-storage-bucket
   }
 
-  set_string {
-    name  = "server.config.contents"
-    value = base64encode(data.http.server_config_contents.body)
-  }
+  # set_string {
+  #   name  = "server.config.contents"
+  #   value = base64encode(data.http.server_config_contents.body)
+  # }
 
   set {
     name  = "server.logLevel"
