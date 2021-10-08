@@ -13,6 +13,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+variable "cloudsql_region" {
+  description = "CloudSQL region"
+  default     = "us-east4"
+}
+
+variable "cloudsql_db_name" {
+  description = "CloudSQL database name"
+  default     = "forseti_security"
+}
+
+variable "cloudsql_disk_size" {
+  description = "The size of data disk, in GB. Size of a running instance cannot be reduced but can be increased."
+  default     = "10"
+}
+
+variable "cloudsql_type" {
+  description = "CloudSQL Instance size"
+  default     = "db-n1-standard-4"
+}
+
+variable "excluded_resources" {
+  description = "A list of resources to exclude during the inventory phase."
+  type        = list(string)
+  default     = []
+}
 
 variable "cscc_violations_enabled" {
   description = "Notify for CSCC violations"

@@ -20,7 +20,7 @@ terraform {
   required_providers {
     google      = "~> 3.52"
     google-beta = "~> 3.52"
-    helm        = "~> 0.10"
+    helm        = "~> 2.3.0"
     kubernetes  = "~> 1.10"
     null        = "~> 2.1"
     random      = "~> 2.2"

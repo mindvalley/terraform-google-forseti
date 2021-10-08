@@ -97,7 +97,6 @@ module "forseti" {
   project_id = var.project_id
 
   client_region   = var.region
-  cloudsql_region = var.region
 
   storage_bucket_location = var.region
   bucket_cai_location     = var.region
@@ -120,4 +119,10 @@ module "forseti" {
   policy_library_repository_branch = var.policy_library_repository_branch
   policy_library_sync_enabled      = var.policy_library_sync_enabled
   server_log_level                 = var.server_log_level
+  excluded_resources               = var.excluded_resources
+  gke_node_pool_name               = var.gke_node_pool_name
+  cloudsql_type                    = var.cloudsql_type
+  cloudsql_region                  = var.cloudsql_region
+  cloudsql_db_name                 = var.cloudsql_db_name
+  cloudsql_disk_size               = var.cloudsql_disk_size
 }
