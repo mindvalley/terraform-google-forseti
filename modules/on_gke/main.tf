@@ -121,21 +121,21 @@ data "tls_public_key" "git_sync_public_ssh_key" {
 //*****************************************
 //  Obtain Forseti Server Configuration
 //*****************************************
-data "google_storage_object_signed_url" "file_url" {
-  bucket      = module.server_gcs.forseti-server-storage-bucket
-  path        = "configs/forseti_conf_server.yaml"
-  content_md5 = module.server_config.forseti-server-config-md5
-}
+# data "google_storage_object_signed_url" "file_url" {
+#   bucket      = module.server_gcs.forseti-server-storage-bucket
+#   path        = "configs/forseti_conf_server.yaml"
+#   content_md5 = module.server_config.forseti-server-config-md5
+# }
 
-data "http" "server_config_contents" {
-  url = data.google_storage_object_signed_url.file_url.signed_url
+# data "http" "server_config_contents" {
+#   url = data.google_storage_object_signed_url.file_url.signed_url
 
-  request_headers = {
-    "Content-MD5" = module.server_config.forseti-server-config-md5
-  }
+#   request_headers = {
+#     "Content-MD5" = module.server_config.forseti-server-config-md5
+#   }
 
-  depends_on = [data.google_storage_object_signed_url.file_url]
-}
+#   depends_on = [data.google_storage_object_signed_url.file_url]
+# }
 
 //*****************************************
 //  Create Kubernetes Forseti Namespace
