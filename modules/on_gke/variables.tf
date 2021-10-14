@@ -84,7 +84,7 @@ variable "gsuite_admin_email" {
 
 variable "forseti_version" {
   description = "The version of Forseti to install"
-  default     = "v2.25.1"
+  default     = "v2.25.2"
 }
 
 variable "forseti_repo_url" {
@@ -382,13 +382,13 @@ variable "blacklist_enabled" {
 variable "bucket_acl_enabled" {
   description = "Bucket ACL scanner enabled."
   type        = bool
-  default     = true
+  default     = false
 }
 
 variable "cloudsql_acl_enabled" {
   description = "Cloud SQL scanner enabled."
   type        = bool
-  default     = true
+  default     = false
 }
 
 variable "config_validator_enabled" {
@@ -406,7 +406,7 @@ variable "enabled_apis_enabled" {
 variable "firewall_rule_enabled" {
   description = "Firewall rule scanner enabled."
   type        = bool
-  default     = true
+  default     = false
 }
 
 variable "forwarding_rule_enabled" {
@@ -418,19 +418,19 @@ variable "forwarding_rule_enabled" {
 variable "group_enabled" {
   description = "Group scanner enabled."
   type        = bool
-  default     = true
+  default     = false
 }
 
 variable "iam_policy_enabled" {
   description = "IAM Policy scanner enabled."
   type        = bool
-  default     = true
+  default     = false
 }
 
 variable "iap_enabled" {
   description = "IAP scanner enabled."
   type        = bool
-  default     = true
+  default     = false
 }
 
 variable "instance_network_interface_enabled" {
@@ -454,7 +454,7 @@ variable "ke_version_scanner_enabled" {
 variable "kms_scanner_enabled" {
   description = "KMS scanner enabled."
   type        = bool
-  default     = true
+  default     = false
 }
 
 variable "lien_enabled" {
@@ -472,7 +472,7 @@ variable "location_enabled" {
 variable "log_sink_enabled" {
   description = "Log sink scanner enabled."
   type        = bool
-  default     = true
+  default     = false
 }
 
 variable "manage_rules_enabled" {
@@ -524,7 +524,7 @@ variable "role_enabled" {
 variable "service_account_key_enabled" {
   description = "Service account key scanner enabled."
   type        = bool
-  default     = true
+  default     = false
 }
 
 variable "verify_policy_library" {
@@ -782,12 +782,12 @@ variable "bucket_cai_lifecycle_age" {
 #---------#
 variable "network" {
   description = "The VPC where the Forseti client and server will be created"
-  default     = "default"
+  default     = "vpc-01"
 }
 
 variable "subnetwork" {
   description = "The VPC subnetwork where the Forseti client and server will be created"
-  default     = "default"
+  default     = "subnet-us-east4-01"
 }
 
 variable "network_project" {
@@ -818,7 +818,7 @@ variable "client_enabled" {
 
 variable "client_type" {
   description = "GCE Forseti Client machine type"
-  default     = "n1-standard-2"
+  default     = "e2-small"
 }
 
 variable "client_boot_image" {
@@ -828,7 +828,7 @@ variable "client_boot_image" {
 
 variable "client_region" {
   description = "GCE Forseti Client region"
-  default     = "us-central1"
+  default     = "us-east4"
 }
 
 variable "client_instance_metadata" {
@@ -960,7 +960,7 @@ variable "k8s_forseti_orchestrator_image" {
 
 variable "k8s_forseti_orchestrator_image_tag" {
   description = "The tag for the container image for the Forseti orchestrator"
-  default     = "v2.25.1"
+  default     = "v2.25.2"
 }
 
 variable "k8s_forseti_server_image" {
@@ -970,7 +970,7 @@ variable "k8s_forseti_server_image" {
 
 variable "k8s_forseti_server_image_tag" {
   description = "The tag for the container image for the Forseti server"
-  default     = "v2.25.1"
+  default     = "v2.25.2"
 }
 
 variable "k8s_forseti_server_ingress_cidr" {
