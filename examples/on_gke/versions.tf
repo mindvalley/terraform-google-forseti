@@ -14,15 +14,17 @@
  * limitations under the License.
  */
 
-
 terraform {
   required_version = ">= 0.12"
   required_providers {
-    google      = "~> 3.52.0"
-    google-beta = "~> 3.52.0"
+    google      = "~> 3.78"
+    google-beta = "~> 3.82"
     helm        = "~> 0.10.4"
-    http        = "~> 1.1.0"
-    kubernetes  = "~> 1.10.0"
+    kubernetes  = "~> 1.13.4"
+    null        = "~> 2.1"
+    random      = "~> 2.2"
+    template    = "~> 2.1"
+    tls         = "~> 2.1"
     local       = "~> 1.4.0"
   }
 }
