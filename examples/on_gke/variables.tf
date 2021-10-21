@@ -18,6 +18,11 @@ variable "cloudsql_region" {
   default     = "us-east4"
 }
 
+variable "violations_slack_webhook" {
+  description = "Slack webhook for any violation. Will apply to all scanner violation notifiers."
+  default     = ""
+}
+
 variable "cloudsql_db_name" {
   description = "CloudSQL database name"
   default     = "forseti_security"

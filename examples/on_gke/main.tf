@@ -120,4 +120,5 @@ module "forseti" {
   cloudsql_region                  = var.cloudsql_region
   cloudsql_db_name                 = var.cloudsql_db_name
   cloudsql_disk_size               = var.cloudsql_disk_size
+  violations_slack_webhook         = var.violations_slack_webhook
 }
